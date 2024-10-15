@@ -3,9 +3,9 @@
     "dockerfile": "Dockerfile"
   },
   "start": {
-    "command": "gunicorn wsgi:app --bind 0.0.0.0:8090 --workers 3"
+    "command": "gunicorn wsgi:app --bind 0.0.0.0:8080 --workers 3"
   },
   "env": {
-    "PORT": "8090"
+    "PORT": "8080"
   }
 }

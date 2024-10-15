@@ -1,4 +1,3 @@
-from app import app  # Assuming your Dash app is in app.py
+from app import server
 
-if __name__ == "__main__":
-    app.run()
+# Gunicorn will call this object to run the application

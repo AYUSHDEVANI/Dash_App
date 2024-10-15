@@ -3,9 +3,13 @@ from dash import dcc, html, Input, Output
 import yfinance as yf
 import plotly.graph_objs as go
 from urllib.parse import parse_qs
+from flask import Flask
 
-# Initialize the Dash app
-app = dash.Dash(__name__)
+# Initialize the Flask app
+server = Flask(__name__)
+
+# Initialize the Dash app with the Flask server
+app = dash.Dash(__name__, server=server, url_base_pathname='/')
 
 # Layout of the app
 app.layout = html.Div([
