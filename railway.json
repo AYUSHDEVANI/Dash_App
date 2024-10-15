@@ -3,7 +3,7 @@
       "dockerfile": "./Dockerfile" 
     },
     "start": {
-      "command": "gunicorn app:app"
+      "command": "gunicorn app:dash_app"
     }
   }
   
