@@ -111,6 +111,6 @@ def update_graph(search, chart_type):
 
     return fig
 
-# Run the app
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)  # Port can be any for local testing
+
