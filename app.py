@@ -4,11 +4,11 @@ import yfinance as yf
 import plotly.graph_objs as go
 from urllib.parse import parse_qs
 
-# Initialize the Dash dash_app
-dash_app = dash.Dash(__name__)
+# Initialize the Dash app
+app = dash.Dash(__name__)
 
-# Layout of the dash_app
-dash_app.layout = html.Div([
+# Layout of the app
+app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     dcc.Dropdown(
         id='chart-type-dropdown',
@@ -27,7 +27,7 @@ dash_app.layout = html.Div([
 ])
 
 # Callback to update the graph based on stock symbol, timeframe, and chart type
-@dash_app.callback(
+@app.callback(
     Output('live-stock-graph', 'figure'),
     Input('url', 'search'),
     Input('chart-type-dropdown', 'value')
@@ -111,6 +111,6 @@ def update_graph(search, chart_type):
 
     return fig
 
-# Run the dash_app
+# Run the app
 if __name__ == '__main__':
-    dash_app.run_server(debug=True)
+    app.run_server(debug=True)
