@@ -1,0 +1,9 @@
+{
+    "build": {
+      "dockerfile": "./Dockerfile" 
+    },
+    "start": {
+      "command": "gunicorn app:app"
+    }
+  }
+  
